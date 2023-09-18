@@ -1,31 +1,79 @@
-body {
-  font-family: Arial, sans-serif;
+.container {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #fafafa;
+  background: linear-gradient(45deg, #f3ec78, #af4261);
+}
+
+.main {
+  padding: 2rem;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  animation: fadeIn 1.5s;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap'); /* Importing Playfair Display font */
+
+.title {
   margin: 0;
-  padding: 0;
+  font-family: 'Playfair Display', serif; /* Using Playfair Display for the title */
+  font-weight: 700; /* Making the title bold */
+  font-size: 6rem; /* Adjusting size for better proportion */
+  letter-spacing: -2px; /* Slightly reduce space between letters */
+  color: #e7e7e7;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15); /* Adding a subtle shadow */
 }
 
-header, footer, main {
-  padding: 20px;
+
+.title span {
+  display: inline-block; /* Allows for transform animations on inline elements */
+  animation: bounce 2s infinite; /* Adjust the animation duration if needed */
 }
 
-header {
-  background-color: #333;
-  color: #fff;
-  text-align: center;
-  padding: 40px 0;
+.description {
+  margin: 1rem 0;
+  font-size: 1.25rem;
 }
 
-footer {
-  background-color: #eee;
-  text-align: center;
-  padding: 20px 0;
+.button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: #111;
+  background-color: #f3ec78;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
 }
 
-a {
-  color: #0070f3;
-  text-decoration: none;
+.button:hover {
+  background-color: #f5f085;
 }
 
-a:hover {
-  text-decoration: underline;
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+/* styles/global.css */
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }
