@@ -1,27 +1,48 @@
 // pages/LearnMore.tsx
 import React from 'react';
-import IconLayout from '@components/IconLayout'; // Import the layout component
+import Head from 'next/head';
+import Link from 'next/link';
 
 const LearnMore: React.FC = () => {
   return (
-    <IconLayout>
-      <div className="container">
-        <div className="learn-container">
-          <aside className="sidebar">
-            <ul>
-              <li><a href="/option1">Option 1</a></li>
-              <li><a href="/option2">Option 2</a></li>
-              <li><a href="/option3">Option 3</a></li>
-              <li><a href="/option4">Option 4</a></li>
-            </ul>
-          </aside>
-          <main className="learn-content main">
-            <h2>Welcome to the Learn More Page</h2>
-            <p>This page contains detailed information about various topics. Choose an option from the sidebar to navigate to that topic.</p>
-          </main>
+    <div className="container">
+      <Head>
+        <title>Learn More - John Park</title>
+      </Head>
+      
+      <div className="learn-container">
+        
+        {/* Sidebar */}
+        <div className="learn-sidebar">
+          <ul>
+            <li>
+              <Link href="/devlog/python-exploration">
+                <a>Python Exploration</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/devlog/nitty-learnings">
+                <a>Nitty Learnings</a>
+              </Link>
+            </li>
+            <li>
+              <Link href="/devlog/pixel-arts">
+                <a>Pixel Arts</a>
+              </Link>
+            </li>
+          </ul>
         </div>
+
+        {/* Content Area */}
+        <div className="learn-content">
+          <h2>Welcome to the DevLog</h2>
+          <p>
+            Here you'll find a collection of my explorations, learnings, and creative endeavors in the world of software development. Dive into each section to discover more.
+          </p>
+        </div>
+      
       </div>
-    </IconLayout>
+    </div>
   );
 }
 
