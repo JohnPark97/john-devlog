@@ -14,6 +14,7 @@ const Field: React.FC = () => {
     
         const container = document.getElementById('animal-container');
         if (container) {
+          //@ts-expect-error
           container.appendChild(app.view);
         }
     
