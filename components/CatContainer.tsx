@@ -2,17 +2,10 @@
 import React, { useEffect } from "react";
 import { Application } from "pixi.js";
 import renderCatSprite from "./Cat";
-import { Assets } from "pixi.js";
 
 const CatContainer: React.FC = () => {
   useEffect(() => {
     const loadCatSprites = async () => {
-      // await Promise.all([
-      //   Assets.load(['spritesheets/cat/angryCat.json']),
-      //   Assets.load(['spritesheets/cat/cat.json']),
-      // ]);
-      await Assets.load(['spritesheets/cat/waggingCat.json', 'spritesheets/cat/angryCat.json', 'spritesheets/cat/heartCats.json']);
-      console.log('Assets.cache: ', Assets.cache)
       const app = new Application({
         backgroundColor: 0x1099bb,
         resizeTo: window,

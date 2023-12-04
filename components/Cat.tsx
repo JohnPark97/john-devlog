@@ -10,6 +10,7 @@ type Params = {
 }
 
 const renderCatSprite = async (params: Params) => {
+  await Assets.load([params.animationJson]);
   const animations  = Assets.cache.get(params.animationJson).data.animations;
   const character = AnimatedSprite.fromFrames(animations[params.animationName]);
 
