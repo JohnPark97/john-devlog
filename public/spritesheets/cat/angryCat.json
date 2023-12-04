@@ -1,0 +1,111 @@
+{"frames": {
+
+"AngryCat-0.png":
+{
+	"frame": {"x":1,"y":1,"w":32,"h":31},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":31},
+	"sourceSize": {"w":32,"h":31}
+},
+"AngryCat-1.png":
+{
+	"frame": {"x":35,"y":1,"w":32,"h":31},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":31},
+	"sourceSize": {"w":32,"h":31}
+},
+"AngryCat-2.png":
+{
+	"frame": {"x":69,"y":1,"w":32,"h":31},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":31},
+	"sourceSize": {"w":32,"h":31}
+},
+"AngryCat-3.png":
+{
+	"frame": {"x":103,"y":1,"w":32,"h":31},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":31},
+	"sourceSize": {"w":32,"h":31}
+},
+"AngryCat-4.png":
+{
+	"frame": {"x":137,"y":1,"w":32,"h":31},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":31},
+	"sourceSize": {"w":32,"h":31}
+},
+"AngryCat-5.png":
+{
+	"frame": {"x":171,"y":1,"w":32,"h":31},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":31},
+	"sourceSize": {"w":32,"h":31}
+},
+"AngryCat-6.png":
+{
+	"frame": {"x":205,"y":1,"w":32,"h":31},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":31},
+	"sourceSize": {"w":32,"h":31}
+},
+"AngryCat-7.png":
+{
+	"frame": {"x":239,"y":1,"w":32,"h":31},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":31},
+	"sourceSize": {"w":32,"h":31}
+},
+"AngryCat-8.png":
+{
+	"frame": {"x":273,"y":1,"w":32,"h":31},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":31},
+	"sourceSize": {"w":32,"h":31}
+},
+"AngryCat-9.png":
+{
+	"frame": {"x":307,"y":1,"w":32,"h":31},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":31},
+	"sourceSize": {"w":32,"h":31}
+},
+"AngryCat-10.png":
+{
+	"frame": {"x":341,"y":1,"w":32,"h":31},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":31},
+	"sourceSize": {"w":32,"h":31}
+},
+"AngryCat-11.png":
+{
+	"frame": {"x":375,"y":1,"w":32,"h":31},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":32,"h":31},
+	"sourceSize": {"w":32,"h":31}
+}},
+"animations": {
+	"angry": ["AngryCat-0.png","AngryCat-1.png","AngryCat-2.png","AngryCat-3.png","AngryCat-4.png","AngryCat-5.png","AngryCat-6.png","AngryCat-7.png","AngryCat-8.png","AngryCat-9.png","AngryCat-10.png","AngryCat-11.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.1",
+	"image": "angryCat.png",
+	"format": "RGBA8888",
+	"size": {"w":408,"h":33},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:583fca6a51c26b004984c4f3fd3a51cb:043e0cf1bae3268e7b4cc775b728567e:a4ad25244e812a28e1f1d71534c2b77c$"
+}
+}

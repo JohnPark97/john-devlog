@@ -1,13 +1,12 @@
 // pages/index.tsx
-import React, { useEffect } from 'react';
-import Field from '@components/Field';
+import React from 'react';
+import CatContainer from '@components/CatContainer';
 
 const Home: React.FC = () => {
-  const title = "John Park";
 
   return (
     <div className="container">
-      <Field />
+      <CatContainer />
     </div>
   );
 }

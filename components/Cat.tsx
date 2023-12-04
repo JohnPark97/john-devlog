@@ -1,32 +1,24 @@
 // components/PixelAnimation.tsx
 import { AnimatedSprite, Assets } from 'pixi.js';
 
-const CatSprite = async (type?: string) => {
-  const sleepingCat = () => {
-    const catImages = ['/images/cat1.png', '/images/cat2.png'];
-    const animatedSprite = AnimatedSprite.fromImages(catImages);
-    animatedSprite.position.set(50, 50);
-    animatedSprite.scale.set(5, 5); // Adjust the scale to fit the canvas better
-  
-    animatedSprite.animationSpeed = 0.1;
-    animatedSprite.play();
+type Params = {
+  animationJson: string;
+  animationName: string;
+  animationSpeed: number;
+  position: { x: number, y: number };
+  scale: { x: number, y: number };
+}
 
-    return animatedSprite;
-  }
+const renderCatSprite = async (params: Params) => {
+  const animations  = Assets.cache.get(params.animationJson).data.animations;
+  const character = AnimatedSprite.fromFrames(animations[params.animationName]);
 
-  const waggingCat = async () => {
-    const animations  = Assets.cache.get('spritesheets/cat/cat.json').data.animations;
-    const character = AnimatedSprite.fromFrames(animations['catWagging']);
-
-    // configure + start animation:
-    character.animationSpeed = 1 / 6;                     // 6 fps
-    character.position.set(200, 200);
-    character.scale.set(5, 5);
-    character.play();
-    return character;
-  }
-
-  return type ? await waggingCat() : sleepingCat();
+  // configure + start animation:
+  character.animationSpeed = params.animationSpeed                     // 6 fps
+  character.position.set(params.position.x, params.position.y);
+  character.scale.set(params.scale.x, params.scale.y);
+  character.play();
+  return character;
 };
 
-export default CatSprite;
+export default renderCatSprite;
