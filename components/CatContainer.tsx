@@ -17,12 +17,13 @@ const CatContainer: React.FC = () => {
         container.appendChild(app.view);
       }
 
+      //TODO can we simplify this repetition
       const waggingCat = await renderCatSprite({
         animationJson: 'spritesheets/cat/waggingCat.json', 
         animationName: 'catWagging', 
         animationSpeed: 0.1, 
         position: {x: 0, y: 0}, 
-        scale: {x: 4, y: 4}
+        scale: {x: 3, y: 3}
       });
 
       const angryCat = await renderCatSprite({
@@ -30,7 +31,7 @@ const CatContainer: React.FC = () => {
         animationName: 'angry', 
         animationSpeed: 0.1, 
         position: {x: 100, y: 100}, 
-        scale: {x: 4, y: 4}
+        scale: {x: 3, y: 3}
       });
 
       const heartCats = await renderCatSprite({
@@ -38,21 +39,10 @@ const CatContainer: React.FC = () => {
         animationName: 'heart', 
         animationSpeed: 0.1, 
         position: {x: 300, y: 100}, 
-        scale: {x: 4, y: 4}
+        scale: {x: 3, y: 3}
       });
 
-      if (waggingCat) {
-        app.stage.addChild(waggingCat);
-      }
-
-      if (angryCat) {
-        app.stage.addChild(angryCat);
-      }
-
-      if (heartCats) {
-        app.stage.addChild(heartCats);
-      }
-
+      app.stage.addChild(waggingCat, angryCat, heartCats);
       app.start();
     };
 

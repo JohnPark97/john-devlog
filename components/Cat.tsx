@@ -9,8 +9,15 @@ type Params = {
   scale: { x: number, y: number };
 }
 
+async function loadAssets(path: string): Promise<void> {
+  if (Assets.cache.has(path)) {
+    return;
+  } else {
+    await Assets.load([path]);
+  }
+}
 const renderCatSprite = async (params: Params) => {
-  await Assets.load([params.animationJson]);
+  await loadAssets(params.animationJson);
   const animations  = Assets.cache.get(params.animationJson).data.animations;
   const character = AnimatedSprite.fromFrames(animations[params.animationName]);
 
