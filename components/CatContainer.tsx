@@ -29,7 +29,7 @@ const CatContainer: React.FC = () => {
       const angryCat = await renderCatSprite({
         animationJson: 'spritesheets/cat/angryCat.json', 
         animationName: 'angry', 
-        animationSpeed: 0.1, 
+        animationSpeed: 0.15, 
         position: {x: 100, y: 100}, 
         scale: {x: 3, y: 3}
       });
@@ -37,7 +37,7 @@ const CatContainer: React.FC = () => {
       const heartCats = await renderCatSprite({
         animationJson: 'spritesheets/cat/heartCats.json', 
         animationName: 'heart', 
-        animationSpeed: 0.1, 
+        animationSpeed: 0.15, 
         position: {x: 400, y: 100}, 
         scale: {x: 3, y: 3}
       });
@@ -53,7 +53,7 @@ const CatContainer: React.FC = () => {
       const drawingCat = await renderCatSprite({
         animationJson: 'spritesheets/cat/drawingCat.json', 
         animationName: 'draw', 
-        animationSpeed: 0.2, 
+        animationSpeed: 0.15, 
         position: {x: 300, y: 100}, 
         scale: {x: 3, y: 3}
       });
