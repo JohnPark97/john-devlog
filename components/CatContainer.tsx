@@ -1,70 +1,57 @@
-// components/Field.tsx
 import React, { useEffect } from "react";
-import { Application } from "pixi.js";
-import renderCatSprite from "./Cat";
+import { Application, Container, Assets, Ticker, DisplayObject } from "pixi.js";
+import Cat from "public/classes/Cat";
+import { initializeCats } from "services/CatLogic";
 
 const CatContainer: React.FC = () => {
   useEffect(() => {
-    const loadCatSprites = async () => {
+    const init = async () => {
       const app = new Application({
         backgroundColor: 0x1099bb,
         resizeTo: window,
       });
 
-      const container = document.getElementById('animal-container');
-      if (container) {
+      const container = new Container();
+      app.stage.addChild(container);
+
+      const cats = initializeCats();
+
+      // Add cats to the container
+      cats.forEach(async (cat) => {
+        const catSprite = await cat.loadAnimatedSprite();
+        container.addChild(catSprite);
+      });
+
+      Ticker.shared.add(() => {
+        // container.children[0].x += 1
+        const catSprites: DisplayObject[] = container.children
+        update(catSprites);
+      });
+
+      const containerElement = document.getElementById('animal-container');
+      if (containerElement) {
         //@ts-expect-error
-        container.appendChild(app.view);
+        containerElement.appendChild(app.view);
       }
-
-      //TODO can we simplify this repetition
-      const waggingCat = await renderCatSprite({
-        animationJson: 'spritesheets/cat/waggingCat.json', 
-        animationName: 'catWagging', 
-        animationSpeed: 0.2, 
-        position: {x: 0, y: 0}, 
-        scale: {x: 3, y: 3}
-      });
-
-      const angryCat = await renderCatSprite({
-        animationJson: 'spritesheets/cat/angryCat.json', 
-        animationName: 'angry', 
-        animationSpeed: 0.15, 
-        position: {x: 100, y: 100}, 
-        scale: {x: 3, y: 3}
-      });
-
-      const heartCats = await renderCatSprite({
-        animationJson: 'spritesheets/cat/heartCats.json', 
-        animationName: 'heart', 
-        animationSpeed: 0.15, 
-        position: {x: 400, y: 100}, 
-        scale: {x: 3, y: 3}
-      });
-
-      const pullupCat = await renderCatSprite({
-        animationJson: 'spritesheets/cat/pullupCat.json', 
-        animationName: 'pullup', 
-        animationSpeed: 0.2, 
-        position: {x: 500, y: 100}, 
-        scale: {x: 3, y: 3}
-      });
-
-      const drawingCat = await renderCatSprite({
-        animationJson: 'spritesheets/cat/drawingCat.json', 
-        animationName: 'draw', 
-        animationSpeed: 0.15, 
-        position: {x: 300, y: 100}, 
-        scale: {x: 3, y: 3}
-      });
-
-      app.stage.addChild(waggingCat, angryCat, heartCats, pullupCat, drawingCat);
-      app.start();
     };
 
-    loadCatSprites();
+    init();
   }, []);
 
+  function update(children: DisplayObject[]) {
+    //TODO enhance this logic
+    // children.forEach((child) => {
+    //   child.x += 1;
+    // })
+  }
+
+  async function loadAssets(path: string): Promise<void> {
+    if (Assets.cache.has(path)) {
+      return;
+    } else {
+      Assets.load([path]);
+    }
+}
   return <div id='animal-container'></div>;
 };
 
